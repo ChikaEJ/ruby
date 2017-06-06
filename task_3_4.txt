@@ -1,0 +1,32 @@
+1. true && (false or (2 < 3))
+Упрощение:
+  1 true && (false or (2 < 3))
+  2 true && (false or true)
+  3 true && true
+  4 true
+Ответ: true
+
+2. (2 < 3) && (3 > 4) || true
+Упрощение:
+  1 (2 < 3) && (3 > 4) || true
+  2 true && false || true
+  3 false || true
+  4 true
+Ответ: true
+
+3. !true && (!true || 100 != 5**2)
+Упрощение
+  1 !true && (!true || 100 != 5**2)
+  2 !true && (!true || true)
+  3 !true && true
+  4 false
+Ответ: false
+
+4. ("123" == 123) or ((10 <= 10) && (nil == false))
+Упрощение
+  1 false or ((10 <= 10) && (nil == false))
+  2 false or ((true) && (nil == false))
+  3 false or (true && false)
+  4 false or false
+  5 false
+Ответ: false 

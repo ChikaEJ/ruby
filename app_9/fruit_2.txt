@@ -1,0 +1,4 @@
+bottles 5
+bags 3
+pancils 1000
+apples 100

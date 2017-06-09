@@ -1,0 +1,4 @@
+bananas 10
+oranges 20
+pineapples 500
+kiwis 4

@@ -13,6 +13,7 @@ h1{
 }
 .general{
   display: flex;
+  padding: 20px 20px;
 }
 .contaner{
   width: 900px;
@@ -25,17 +26,19 @@ h1{
 .general{
   background-color: deepskyblue;
   border-radius: 20px;
+  padding: 20px 20px;
 }
 .anketa{
-  margin: auto;
   background-color: deepskyblue;
   border-radius: 20px;
   border: black;
+  padding: 20px 20px;
 }
 .my-contacts{
   background-color: deepskyblue;
   border-radius: 20px;
+  padding: 20px 20px;
 }
 .submit-anketa{
-  text-align: center;
+  padding: 50px 40px;
 }

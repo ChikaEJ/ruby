@@ -1,0 +1,41 @@
+body{
+  background-color: beige;
+  font-family: arial;
+}
+h1{
+  color: darkgreen;
+  text-align: center;
+}
+.title-type{
+  text-align: center;
+  text-shadow: 10px;
+  color: indigo;
+}
+.general{
+  display: flex;
+}
+.contaner{
+  width: 900px;
+  margin: 100px auto;
+}
+.avatar{
+  border-radius: 10px;
+  margin-left: auto;
+}
+.general{
+  background-color: deepskyblue;
+  border-radius: 20px;
+}
+.anketa{
+  margin: auto;
+  background-color: deepskyblue;
+  border-radius: 20px;
+  border: black;
+}
+.my-contacts{
+  background-color: deepskyblue;
+  border-radius: 20px;
+}
+.submit-anketa{
+  text-align: center;
+}

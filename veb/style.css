@@ -1,0 +1,14 @@
+body {
+  background: gray;
+  color: blue;
+}
+.discription {
+  font-size: 30px;
+  text-transform: uppercase;}
+.text-important {
+    color: darkred;
+  }
+.promo-image{
+  width: 100%;
+  
+}

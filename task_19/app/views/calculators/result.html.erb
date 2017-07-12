@@ -1,0 +1,19 @@
+<h1>Calculator</h1>
+<form action="<%= calculators_result_path %>" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <label>First Number: </label><br>
+  <input type="text" name="first_number"><br/>
+  <label>Second Number: </label><br>
+  <input type="text" name="second_number" ><br/>
+  <br>
+  <label><input type="radio" name="operation" value="+">add</label><br>
+  <label><input type="radio" name="operation" value="-">subtract</label><br>
+  <label><input type="radio" name="operation" value="*">multiply</label><br>
+  <label><input type="radio" name="operation" value="/">divide</label><br>
+  <br>
+  <input type="submit" name="" value="Calculate"><br/>
+
+</form>
+
+
+  <h3><%= "Result: #{@first_number} #{@operation} #{@second_number} = #{@result.round(2)} "%></h3>

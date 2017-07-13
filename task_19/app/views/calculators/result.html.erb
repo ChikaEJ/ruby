@@ -17,3 +17,6 @@
 
 
   <h3><%= "Result: #{@first_number} #{@operation} #{@second_number} = #{@result.round(2)} "%></h3>
+  <%= if @result == 10
+     "You are shows ten! "
+  end %>

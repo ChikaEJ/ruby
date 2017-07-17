@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task20</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="navbar navbar-default ">
+      <ul class="nav nav-pills">
+        <li role="presentation" class="active"><%= link_to "Main", root_path %></li>
+        <li role="presentation"><%= link_to "About store", pages_about_path %></li>
+        <li role="presentation"><%= link_to "Our Contacts", pages_contacts_path %></li>
+      </ul>
+    </header>
+    <div class="container center">
+      <%= yield %>
+    </div>
+    <footer>
+      <div class="panel-footer center">
+        <strong>IT atracctor plus</strong>
+        <strong>Bishkek 2017</strong>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<h1>Our products</h1>
+
+
+<div >
+  <table class="table">
+    <tr>
+      <th class="center">ID </th>
+      <th class="center">Name of product </th>
+      <th class="center">Description </th>
+      <th class="center">Price </th>
+      <th class="center">DELETE</th>
+    </tr>
+    <% @products.each do |product| %>
+    <tr>
+      <td><%= product.id %></td>
+      <td><%= link_to product.name_of_product, product_show_path(product.id) %></td>
+      <td><%= product.description %></td>
+      <td><%= product.price %></td>
+      <td><%= link_to "DELETE", product_delete_path(product.id), method: :delete %></td>
+    </tr>
+    <% end %>
+  </table>
+  <div class="btn btn-default">
+    <ul class="nav nav-pills ">
+      <li role="presentation" class="active"><%= link_to "New Product", products_new_path %></li>
+    </ul>
+  </div>
+
+</div>

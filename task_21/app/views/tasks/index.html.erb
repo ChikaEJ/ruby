@@ -1,0 +1,39 @@
+<h1 class="center">To do list</h1>
+
+<p>
+  <table class="table table-striped table-bordered table-hover table-condensed">
+    <tr>
+      <th>ID</th>
+      <th>Tasks</th>
+      <th>Status</th>
+      <th class="center">What to do?</th>
+    </tr>
+    <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.id %></td>
+      <td><%= task.title %></td>
+      <td><%= task.status %></td>
+      <td><%= link_to "Do it!", tasks_update_path(task.id) %></td>
+      <td><%= link_to "Delete", tasks_delete_path(task.id), method: :delete %></td>
+    </tr>
+    <% end %>
+  </table>
+  <div class="btn btn-default">
+    <ul class="nav nav-pills ">
+      <li role="presentation" class="active"><%= link_to 'Delete all done', tasks_destroy_all_done_path %></li>
+    </ul>
+  </div>
+</p>
+<h2>Add new task</h2>
+<p>
+  <%= form_for :task, url: tasks_create_path do |f| %>
+  <p>
+    <%= f.label :title %> <br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.submit "ADD" %><br>
+  </p>
+
+  <% end %>
+</p>

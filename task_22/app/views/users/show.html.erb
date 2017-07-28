@@ -1,0 +1,29 @@
+<h1><%= @user.name %> <%= @user.surname %></h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %><br>
+  <strong>Surname:</strong>
+  <%= @user.surname %><br>
+  <strong>Email:</strong>
+  <%= @user.email %><br>
+  <strong>City:</strong>
+  <%= @user.city %><br>
+  <strong>Description:</strong>
+  <%= @user.description %><br>
+  <strong>Gender:</strong>
+  <%= @user.gender %><br>
+  <strong>Status:</strong>
+  <%= @user.status %><br>
+
+  <div class="btn btn-default">
+    <ul class="nav nav-pills ">
+      <li role="presentation" class="active"><%= link_to "Edit", edit_user_path(@user.id), method: :get %></li>
+    </ul>
+  </div>
+  <div class="btn btn-default">
+    <ul class="nav nav-pills ">
+      <li role="presentation" class="active"><%= link_to "Delete", user_path(@user.id), method: :delete, data: { confirm: "Are you sure?" } %></li>
+    </ul>
+  </div>
+</p>

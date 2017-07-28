@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task22</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="page-header center">
+      <h1>Home work # 22 Group #6</h1>
+    </div>
+
+    <header class="navbar navbar-default ">
+      <ul class="nav nav-pills">
+        <li role="presentation"><%= link_to "All users", users_path %></li>
+      </ul>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <footer>
+      <div class="panel-footer center">
+        <strong>IT attractor plus</strong>
+        <strong>Bishkek 2017</strong>
+      </div>
+    </footer>
+  </body>
+</html>

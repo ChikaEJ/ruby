@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <header>
+      <div>
+        <%= link_to "All products", products_path %>
+        <%= link_to "Categories", categories_path %>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>

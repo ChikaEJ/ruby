@@ -1,0 +1,24 @@
+<h1>Categories</h1>
+
+<%= link_to 'New Category', new_category_path %>
+<table class="table table-bordered">
+	<tr>
+		<th>Title</th>
+    <th>Action</th>
+	</tr>
+
+	<% @categories.each do |category| %>
+		<tr>
+			<td><%= category.name %></td>
+			<td>
+				<%= link_to 'View', category_path(category) %>
+				<%= link_to 'Edit', edit_category_path(category) %>
+				<%= link_to image_tag('logo.png', size: '50'),  category_path(category),
+										method: :delete,
+										data: {confirm: 'Do you want to remove this product?'}
+%>
+			</td>
+		</tr>
+	<% end %>
+
+</table>

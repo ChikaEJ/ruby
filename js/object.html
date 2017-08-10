@@ -1,0 +1,18 @@
+<script>
+    var Car = function(model, price) {
+        this.model = model;
+        this.price = price;
+
+        var self = this;
+
+        this.getFullName = function() {
+            return self.model + ' ' + self.price;
+        }
+    };
+
+    var ford = new Car('Ford', 5000);
+    var mercedes = new Car('Mercedes', 4500);
+    var toyota = new Car('Toyota', 6000);
+
+    console.log(ford.getFullName());
+</script>

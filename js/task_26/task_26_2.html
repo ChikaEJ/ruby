@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+
+    var avarage = function(array) {
+      var sum = 0;
+      for (var i = 0; i < array.length; i++) {
+        sum += array[i];
+      }
+      var avarage_number;
+      return avarage_number = sum/(array.length);
+    }
+    console.log(avarage([1, 5, 12, 4, 3]));
+    console.log(avarage([2, 3, 4, 5, 6, 7, 8, 9, 10]));
+    console.log(avarage([3, 10, 17]));
+  </script>
+</body>
+</html>

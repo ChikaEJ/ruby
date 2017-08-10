@@ -1,0 +1,15 @@
+<h1>Authors</h1>
+
+<br><br>
+<table class="table table-bordered">
+  <tr>
+    <th>Name</th>
+    <th>Action</th>
+  </tr>
+  <% @authors.each do |author| %>
+  <tr>
+    <td><%= author.name %></td>
+    <td><%= link_to "Veiw", author_path(author) %> </td>
+  </tr>
+  <% end %>
+</table>

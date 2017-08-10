@@ -1,0 +1,20 @@
+<script>
+   var Car = function(model, price) {
+       this.model = model;
+       this.price = price;
+   };
+
+   Car.prototype.getFullName = function() {
+       return this.model + ' $' + this.price;
+   };
+
+   Car.prototype.setEngineType = function(engineType) {
+       this.engineType = engineType;
+   };
+
+   var ford = new Car('Ford', 4000);
+
+   console.log(ford.getFullName());
+   ford.setEngineType('diesel');
+   console.log(ford);
+</script>

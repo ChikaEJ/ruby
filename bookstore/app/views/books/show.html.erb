@@ -6,3 +6,18 @@
 <p><b>Describtion: </b><%= @book.describtion %></p>
 <p><b>Sales:</b><%= @book.sale %></p>
 <p><b>Price: </b><%= @book.price %></p>
+
+
+<h2><%= link_to 'Comments', '#comment-section', id: 'comments-link', data: {toggle: "collapse"}, class: "btn btn-info" %></h2>
+<div id="comment-section" class="panel-collapse collapse">
+  <div class="list-group">
+    <ol id="comments" class="list-group-item-text">
+      <%= render @book.comments %>
+    </ol>
+  </div>
+
+  <h3>Add a comment:</h3>
+  <%= render 'comments/form' %>
+</div>
+
+

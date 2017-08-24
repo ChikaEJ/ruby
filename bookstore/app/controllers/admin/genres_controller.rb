@@ -1,6 +1,5 @@
-class Admin::GenresController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: "admin"
-  layout 'admin'
+class Admin::GenresController < AdminController
+
   def new
     @genre = Genre.new
   end
@@ -8,7 +7,7 @@ class Admin::GenresController < ApplicationController
   def index
     @genres = Genre.all
   end
-  
+
   def create
     @genre = Genre.new(genre_params)
     if @genre.save

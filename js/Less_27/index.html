@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="jquery-3.2.1.min.js"></script>
+  <title>Ajax</title>
+</head>
+<body>
+<ul id="region"></ul>
+<script type="text/javascript">
+  // var regionList =$('#region')
+  // $.get('http://api-srv.opendata-hackathon.com/region', {}, showList);
+  //
+  // function showList(list, status) {
+  //   var regionMarkup = ";"
+  //   $.each(list, function(index, region) {
+  //     regionMarkup += '<li>'+region.tatle+'</li>';
+  //   });
+  //   regionList.append(regionMarkup);
+  // }
+
+  var student = { name: "Ivan", grad: '4'}
+  console.log(student);
+  localStorage.setItem('student-key', JSON.stringify(student));
+
+  var newStudent = JSON.parse(localStorage.getItem('student-key'));
+  console.log(newStudent);
+</script>
+</body>
+</html>

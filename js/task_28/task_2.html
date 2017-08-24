@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="script/jquery-3.2.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="deputyList"></div>
+  <script type="text/javascript">
+    $.get('http://api-srv.opendata-hackathon.com/deputy', {}, showList);
+
+    $(document).on('click', '.deputy', function(e) {
+      var deputyId = $(e.target).attr('deputyId');
+      Id = deputyId
+      $.get('http://api-srv.opendata-hackathon.com/vote_result?deputy_id=eq.'+deputyId, {}, drawResult);
+    });
+
+    function showList(list) {
+      var listDeputy = '';
+      $.each(list, function(index, deputy) {
+        listDeputy += '<div id="deputy_'+deputy.id+'" class="deputy list-group col-md-3"><a href="#" class="list-group-item active" ><h4 class="list-group-item-heading" deputyId='+deputy.id+'>'+deputy.full_name+'</h4><p class="list-group-item-text" id="rezult_'+deputy.id+'"></p></a></div>';
+      });
+      $('#deputyList').append(listDeputy);
+    }
+
+    function drawResult(list) {
+      var result = '';
+      var posivite = 0;
+      var negative = 0;
+      var absent = 0;
+      $.each(list, function(index, deputy) {
+        if (deputy.result === "за") {
+          posivite += 1;
+        }else if (deputy.result === "против") {
+          negative += 1;
+        }else {
+          absent += 1;
+        }
+      });
+      var r = $('#deputy_'+Id+' a h4');
+      alert('Депутат '+r.html()+' проголосовал "за":'+posivite+', "против":'+negative+', "отсутствовал:"'+absent);
+    }
+  </script>
+</body>
+</html>

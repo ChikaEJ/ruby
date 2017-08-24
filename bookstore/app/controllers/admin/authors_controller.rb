@@ -1,6 +1,5 @@
-class Admin::AuthorsController < ApplicationController
- http_basic_authenticate_with name: "admin", password: "admin"
- layout 'admin'
+class Admin::AuthorsController < AdminController
+
   def new
     @author = Author.new
   end

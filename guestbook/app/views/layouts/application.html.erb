@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <header class="header">
+      <nav class="navbar navbar-inverse navbar-fixed-top ">
+        <strong><%= link_to "Guestbook", records_path, class: "title" %></strong> <br>
+        <%= link_to "Records", records_path, class: "btn" %> |
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="jquery-3.2.1.min.js">
+
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="container">
+
+  </div>
+  <script type="text/javascript">
+  var container = $('#container');
+  var items = ["apple", "banana", "pineapple"];
+
+  $.each(items, function(index, item) {
+    var element = $('<div class="element">' + item + '</div>');
+    element.on('click', function() {
+      alert(item + ' has been clicked');
+    });
+
+    container.append(element);
+  });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookstore</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body >
+    <header class="header">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <strong><%= link_to "Bookstore", root_path, class: "title" %></strong> <br>
+        <%= link_to "Authors", authors_path, class: "btn" %> |
+        <%= link_to "Geners", genres_path, class: "btn" %> |
+        <%= link_to "Books", books_path, class: "btn" %> |
+        <%= link_to "Admin", admin_books_path, class: "btn" %>
+      </nav>
+    </header>
+    <%= yield %>
+    <footer class="footer">
+    </footer>
+  </body>
+</html>

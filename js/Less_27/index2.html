@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="jquery-3.2.1.min.js"></script>
+  <title>Ajax</title>
+</head>
+<body>
+  <div class="container">
+      <div class="row">
+        <div class="col-md-4" id="navbar">
+          <ul class="nav nav-pills nav-stacked">
+
+          </ul>
+        </div>
+        <div class="col-md-8" id="content">
+          <article id="post"></article>
+          <div id="comments"></div>
+        </div>
+      </div>
+    </div>
+<script src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+  var navbar = $('#navbar'),
+  content = $('#content')
+
+  $.get('https://jsonplaceholder.typicode.com/posts', {}, drowPostList);
+
+  $(document).on('click', '#navbar li', function(e) {
+    var element = $(e.target);
+    var postId = element.attr('data-id');
+    $.get('https://jsonplaceholder.typicode.com/posts/'+postId, {}, drowPost);
+    $.get('https://jsonplaceholder.typicode.com/posts/'+postId+'/comments', {}, drowComments);
+  });
+  function drowPostList(list) {
+    var postsList = '';
+    $.each(list, function(index, post) {
+      postsList += '<li role="presentation"><a href="#" data-id=' +post.id +'>'+post.title+'</a></li>'
+    });
+    navbar.find('ul').append(postsList);
+  }
+
+  function drowPost(post) {
+    var markup = '';
+    markup += '<h1>'+post.title+'</h1>';
+    markup += '<div>'+post.body+'</div>';
+    $('#post').html(markup);
+  }
+  function drowComments(comments) {
+    var markup = "";
+    $.each(comments, function(index, comment) {
+      markup += ('<div class="panel panel-default">'+
+          '<div class="panel-body">'+
+            '<div><h4>'+comment.name+'</h4>'+
+            '<p>'+comment.body+'</p></div>'+
+          '</div>'+
+        '</div>');
+    })
+    $('#comments').append(markup);
+  }
+
+</script>
+</body>
+</html>

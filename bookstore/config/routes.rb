@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+
   root 'books#main'
   get 'books/books' => 'books#books_index', as: 'books'
   get 'authors/authors' => 'authors#authors_index', as: 'authors'
   get 'genres/genres' => 'genres#genres_index', as: 'genres'
-  resources :books, only: [:show]
+  resources :books, only: [:show] do
+    resources :comments
+  end
   resources :authors, only: [:show]
   resources :genres, only: [:show]
 

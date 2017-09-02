@@ -1,0 +1,9 @@
+<div class="list-group" id=<%= order_item.id %> >
+  <h4 class="list-group-item-heading"><strong>Title:</strong><%= order_item.title %></h4>
+  <p class="list-group-item-text"><strong>Amount:</strong><%= order_item.amount %></p>
+  <p class="list-group-item-text"><strong>Tottal price: </strong><%= order_item.total_price %></p>
+  <%= link_to "Delete", order_order_item_path(order_item.order_id, order_item.id), id: "comment-delete", remote: true, class: "btn btn-default",
+              method: :delete,
+              data: {confirm: "Do you want to delete this item?"}
+  %>
+</div>

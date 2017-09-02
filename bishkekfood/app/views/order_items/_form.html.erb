@@ -1,0 +1,16 @@
+<%= form_for [order, order.order_items.build], remote: true do |f| %>
+    <div>
+      <%= f.hidden_field :title, value: food.title %>
+    </div>
+    <div>
+      <%= f.label :amount %> <br>
+      <%= f.number_field :amount, required: true %>
+    </div>
+    <div>
+      <%= f.hidden_field :price, value: food.price%>
+    </div>
+
+    <div >
+      <%= f.submit "Add", id: 'add_to_basket' %>
+    </div>
+<% end %>

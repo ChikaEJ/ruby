@@ -1,0 +1,7 @@
+<h1>My orders</h1>
+
+<%= @order_items.each do |order_item| %>
+  <%= order_item.title %>
+  <%= order_item.amount %>
+  <%= order_item.price %>
+<% end %>

@@ -1,0 +1,9 @@
+<%= form_for order, url: orders_path, method: :post do |f| %>
+    <div>
+      <%= f.hidden_field :status, value: "new" %>
+    </div>
+
+    <div >
+      <%= f.submit "Make order" %>
+    </div>
+<% end %>

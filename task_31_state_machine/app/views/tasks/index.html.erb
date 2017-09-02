@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Cancel reason</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.title %></td>
+        <td><%= task.description %></td>
+        <td><%= task.status %></td>
+        <td><%= task.cancel_reason %></td>
+        <td><%= link_to 'Show', task %></td>
+        <td><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Pending', pending_task_path(task) if task.status == "new" %></td>
+        <td><%= link_to 'In progress', in_progress_task_path(task) if task.status == "pending" %></td>
+        <td><%= link_to 'Complete', complete_task_path(task) if task.status == "in_progress" %></td>
+        <td><%= link_to 'Cancel', canceled_task_path(task) if task.status == "pending" %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Task', new_task_path %>

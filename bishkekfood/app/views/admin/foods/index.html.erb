@@ -1,0 +1,23 @@
+<h1>Foods</h1>
+
+<div>
+  <% @shops.each do |shop| %>
+      <div>
+        <h2><%= shop.title %></h2>
+        <% @foods.each do |food|%>
+            <% if (food.shop_id) == shop.id%>
+
+                <strong><%= food.title %></strong> <br>
+                <p><%= food.describtion %></p> <br>
+                <div><%= food.price %></div> <br>
+                <div><%= link_to 'View', food_path(food) %></div>
+                <%= link_to 'Delete', admin_food_path(food), method: :delete, data: {confirm: "ARE YOU SURE?"} %>
+                <br>------------------------------------------------------------------------------ <br>
+            <% end %>
+        <% end %>
+      </div>
+      ============================================================= <br>
+  <% end %>
+</div>
+
+<%= link_to "Add new food", new_admin_food_path %>

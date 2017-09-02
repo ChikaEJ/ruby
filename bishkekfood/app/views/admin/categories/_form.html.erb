@@ -1,0 +1,23 @@
+<% if @category.errors.any? %>
+    <div>
+      Total errors: <%= @category.errors.count %>
+      <ul>
+        <% @category.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+<%= form_for @category, url: form_url, method: form_method do |f| %>
+    <div>
+      <%= f.label :title %> <br>
+      <%= f.text_field :title, required: true %>
+    </div>
+    <div>
+      <%= f.label :shop_id %> <br>
+      <%= f.collection_select :shop_id, Shop.all, :id, :title %>
+    </div>
+    <div >
+      <%= f.submit %>
+    </div>
+<% end %>

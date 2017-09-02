@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Office_admin</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<heading>
+  <h3>Admin office</h3>
+  <br><br>
+
+  <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+    <div class="container">
+      <div class="navbar-brand btn"><%= link_to "Rooms", admin_rooms_path %></div>
+      <div class="navbar-brand btn"><%= link_to "Equipment", admin_equipment_index_path  %></div>
+    </div>
+  </nav>
+</heading>
+
+<%= yield %>
+
+</body>
+</html>

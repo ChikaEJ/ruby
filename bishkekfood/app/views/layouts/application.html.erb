@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bishkekfood</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to "Main", root_path, class: "navbar-brand" %>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><%= link_to 'Main', root_path %> <span class="sr-only">(current)</span></li>
+          <li><%= link_to "Admin", admin_shops_path %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "", order_path(current_order.id) %>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div class="row">
+    <div class="col-md-10"><%= yield %></div>
+    <div class="col-md-2" id="order_items">
+      <h2><%= link_to "My cart", '#order_items_section', id: 'comments-link', data: {toggle: "collapse"}, class: "btn btn-info" %></h2>
+      <h4><b>You have </b><div id="count" style="color: red"><%= current_order.order_items.count %></div><b> items in the basket</b></h4>
+      <div id="order_items_section" class="panel-collapse collapse">
+        <div class="list-group">
+          <ol id="order_items" class="list-group-item-text">
+            <%= render current_order.order_items %>
+          </ol>
+        </div>
+      </div><%= link_to "Clean cart", order_path(current_order), id: "clean_cart", class: "btn btn-danger", method: :delete %>
+      <%= render 'orders/form', order: Order.new %>
+    </div>
+  </div>
+
+  </body>
+</html>

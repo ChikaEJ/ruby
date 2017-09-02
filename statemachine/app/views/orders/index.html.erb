@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Desc</th>
+      <th>Status</th>
+      <th>Cancel reason</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.name %></td>
+        <td><%= raw order.desc %></td>
+        <td><%= order.status %></td>
+        <td><%= order.cancel_reason %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to "Assign", pending_order_path(order) if order.status == "new" %>
+        </td>
+        <td>
+          <%= link_to "In progress", in_progress_orders_path(order) if order.status == "in progress" %>
+        </td>
+        <td>
+          <%= link_to "Cancel", canceled_by_customer_orders_path(order) if order.status == "Canceled" %>
+        </td>
+        <td>
+          <%= link_to "Assign", pending_order_path(order) if order.status == "new" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_order_path %>

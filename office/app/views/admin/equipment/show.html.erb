@@ -1,0 +1,9 @@
+<h1><%= @equipment.title %></h1>
+
+<p><%= image_tag "/uploads/#{@equipment.id}", size: "200" %></p>
+<p><b>Type: </b><%= @equipment.equipment_type %></p>
+<p><b>Title: </b><%= @equipment.title %></p>
+<p><b>Room number: </b> <%= @equipment.room.number %></p>
+<p><b>Description: </b><%= @equipment.description %></p>
+
+<div class="btn btn-default"><%= link_to "Back", admin_equipment_index_path %></div>

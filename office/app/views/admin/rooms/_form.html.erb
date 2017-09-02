@@ -1,0 +1,25 @@
+<% if @room.errors.any? %>
+<div>
+  Total errors: <%= @room.errors.count %>
+  <ul>
+    <% @room.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<%= form_for [:admin, @room] do |f| %>
+
+  <div>
+    <%= f.label :number %> <br>
+    <%= f.number_field :number, required: true %>
+  </div>
+    <div>
+      <%= f.label :title %> <br>
+      <%= f.text_field :title, required: true %>
+    </div>
+
+  <div >
+    <%= f.submit %>
+  </div>
+<% end %>

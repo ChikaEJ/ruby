@@ -1,0 +1,35 @@
+<% if @food.errors.any? %>
+    <div>
+      Total errors: <%= @food.errors.count %>
+      <ul>
+        <% @food.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+<%= form_for @food, url: form_url, method: form_method do |f| %>
+    <div>
+      <%= f.label :title %> <br>
+      <%= f.text_field :title, required: true %>
+    </div>
+    <div>
+      <%= f.label :describtion %> <br>
+      <%= f.text_area :describtion, required: true %>
+    </div>
+    <div>
+      <%= f.label :price %> <br>
+      <%= f.text_field :price, placeholder: "0.0" %>
+    </div>
+    <div>
+      <%= f.label :shop_id %> <br>
+      <%= f.collection_select :shop_id, Shop.all, :id, :title %>
+    </div>
+    <div>
+      <%= f.label :category_id %> <br>
+      <%= f.collection_select :category_id, Category.all, :id, :title %>
+    </div>
+    <div >
+      <%= f.submit %>
+    </div>
+<% end %>

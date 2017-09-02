@@ -1,0 +1,20 @@
+<h1>Shops</h1>
+
+<br><br>
+<div class="row">
+  <% @shops.each do |shop| %>
+      <% unless shop.title.nil? %>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <%= image_tag "/shop/#{shop.id}", size: '300' %>
+              <div class="caption">
+                <h3><%= shop.title %></h3>
+                <p><%= shop.describtion %></p>
+                <p><%= shop.created_at %></p>
+                <p><%= link_to "View", shop_path(shop), class: "btn btn-default" %> </p>
+              </div>
+            </div>
+          </div>
+      <% end %>
+  <% end %>
+</div>

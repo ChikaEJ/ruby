@@ -1,0 +1,7 @@
+<h1>Photo</h1>
+
+<b>Title:</b> <%= @photo.title %> <br>
+<%= image_tag "/uploads/#{@photo.id}", size: "300" %><br>
+<b>Description:</b><%= @photo.description %><br><br>
+
+<%= link_to "Back", photos_all_path %>

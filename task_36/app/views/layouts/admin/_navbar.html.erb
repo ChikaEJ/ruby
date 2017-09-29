@@ -1,0 +1,36 @@
+<nav class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to 'To the main', root_path, class: 'navbar-brand' %>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Photos", admin_photos_path %></li>
+        <li><%= link_to "Photographers", admin_photographers_path %></li>
+        <li><%= link_to "Add Photographer", new_admin_photographer_path %> <br></li>
+        <li><%= link_to "Add photo", new_admin_photo_path %>  </li>
+      </ul>
+      <div class="navbar-nav navbar-right">
+        <% if logged_in? %>
+          <p class="navbar-text">
+            Hello, <%= link_to current_user.name, admin_user_path(current_user), class: "navbar-link" %>
+          </p>
+          <%= link_to "Sign out", logout_path, method: :delete, class: "btn btn-default navbar-btn" %>
+          <%= link_to 'Add admin user', signup_path, class: 'btn btn-default navbar-btn' %>
+        <% else %>
+
+        <%= link_to 'Log in', login_path, class: 'btn btn-default navbar-btn' %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</nav>

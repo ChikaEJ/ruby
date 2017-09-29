@@ -1,0 +1,14 @@
+<h1>Photographers</h1>
+
+
+<% @photographers.each do |photographer| %>
+  <%= photographer.name %> <br>
+  <%= photographer.lastname %><br>
+  <%= photographer.email %><br>
+  <%= photographer.phone %><br>
+  <%= link_to "View", admin_path(photographer) %> <br>
+  <%= link_to "Delete", admin_photographer_path(photographer), method: :delete,
+                                                         data: { confirm: "Do you realy want to delete this photographer?" } %> <br>
+<% end %>
+
+<%= link_to "Add new photographer", new_admin_photographer_path %>

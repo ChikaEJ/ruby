@@ -1,0 +1,13 @@
+<h1>Main page</h1>
+
+<% @photographers.each do |photographer| %>
+  <h3><%= photographer.name %> <%= photographer.lastname %></h3>
+  <% photographer.photos.each do |photo| %>
+  <div class="row">
+    <div class="col-xs-6 col-md-3">
+        <%= link_to (image_tag "/uploads/#{photo.id}", size: "200",  class: 'thumbnail'), photo_path(photo) %>
+    </div>
+    <%= photo.description %>
+  </div>
+  <% end %>
+<% end %>

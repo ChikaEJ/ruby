@@ -1,0 +1,13 @@
+<h1>Photos</h1>
+
+
+<% @photos.each do |photo| %>
+  <%= photo.title %> <br>
+  <%= photo.description %><br>
+  <%= image_tag "/uploads/#{photo.id}", size: "300" %><br>
+  <%= link_to "View", photo_path(photo) %> <br>
+  <%= link_to "Delete", admin_photo_path(photo), method: :delete,
+                                                         data: { confirm: "Do you realy want to delete this photo?" } %> <br>
+<% end %>
+
+<%= link_to "Add new photo", new_admin_photo_path %>

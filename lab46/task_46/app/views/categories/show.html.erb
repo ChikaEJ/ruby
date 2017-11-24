@@ -1,0 +1,7 @@
+<h1><%= @category.send("name_" + "#{I18n.locale}") %></h1>
+
+<% @category.products.each do |product| %>
+  <p><%= product.send("title_" + "#{I18n.locale}") %></p>
+  <p><%= product.send("description_" + "#{I18n.locale}") %></p>
+  <P><%= product.price_en %></P>
+<% end %>

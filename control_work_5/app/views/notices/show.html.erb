@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @notice.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @notice.user.name %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @notice.category.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @notice.content %>
+</p>
+
+<p>
+  <strong>Contects:</strong>
+  <%= @notice.contacts %>
+</p>
+<td><%= link_to 'Edit', edit_notice_path(@notice) if can? :edit, notice %></td>
+<td><%= link_to 'Destroy', notice_path(@notice) ,  method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, notice %></td>
+
+<%= link_to 'Back', root_path %>

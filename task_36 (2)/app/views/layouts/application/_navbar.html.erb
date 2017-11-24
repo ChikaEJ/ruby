@@ -1,0 +1,28 @@
+<nav class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to 'Main', root_path, class: 'navbar-brand' %>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "About", about_path %></li>
+        <li><a href="#">Contacts</a></li>
+        <li><%= link_to 'Photographers', photographers_all_path %></li>
+        <li><%= link_to 'Photos', photos_all_path %></li>
+      </ul>
+      <div class="navbar-nav navbar-right">
+          <p class="navbar-text">
+           <%= link_to "Admin panel", '/login', class: "navbar-link" %>
+          </p>
+      </div>
+
+    </div>
+  </div>
+</nav>

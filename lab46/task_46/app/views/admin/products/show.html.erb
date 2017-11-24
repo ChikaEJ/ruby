@@ -1,0 +1,11 @@
+<h1><%= @product.send("title_" + "#{I18n.locale}") %></h1>
+<p><%= @product.send("descriprion_" + "#{I18n.locale}") %></p>
+<p>
+    <%= t 'admin.products.index.price' %> <b><%= @product.price_en %></b>
+</p>
+<p>
+    <b><%= t 'admin.products.index.categories' %> </b> <%= @product.category.send("name_" + "#{I18n.locale}") %>
+</p>
+<div>
+    <%= link_to (t 'admin.products.index.back_to_list'), admin_products_path %>
+</div>

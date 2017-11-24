@@ -1,0 +1,21 @@
+<h1>Show photographer</h1>
+
+<h3><%= @photographer.name %> <%= @photographer.lastname %></h3>
+<b>Email: </b><%= @photographer.email %>
+<b>Phone: </b><%= @photographer.phone %>
+<h4>Photos</h4>
+<% @photographer.photos.each do |photo| %>
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag "/uploads/#{photo.id}", size: "300" %>
+      <div class="caption">
+        <h3><%= photo.title %></h3>
+        <p>photo.description</p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+<%= link_to "Back", photographers_all_path %>

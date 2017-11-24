@@ -1,0 +1,9 @@
+<h1>Show photographer</h1>
+
+<%= @photographer.name %> <br>
+<%= @photographer.lastname %><br>
+<%= @photographer.email %><br>
+<%= @photographer.phone %><br><br>
+<%= link_to "Edit", edit_admin_photographer_path(@photographer) %> <hr/>
+<%= link_to "Delete", admin_photographer_path(@photographer), method: :delete, data: { confirm: "Are you sure?" } %> <br><br>
+<%= link_to "Back", admin_photographers_path %>

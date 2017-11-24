@@ -1,0 +1,74 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  en: "EN"
+  ru: "RU"
+  shop: "Shop"
+  logged_in_as: "Logged in as"
+  admin_panel: "Admin panel"
+  edit_profile: "Edit profile"
+  view_orders: "View orders"
+  sign_out: "Sign out"
+  account: "Account"
+  products:
+    show:
+      title_show: "Title"
+      description_show: "Description"
+    index:
+      category: "Category"
+      learn_more: "Learn More"
+      welcome: "Welcome to Shop!"
+      here: "Here you can purchase all kinds of computer hardware for lowest prices. We sell from only trusted and large distributors,
+               to fulfill all your DIY computer needs!"
+      cart: "Cart"
+      add_to_cart: "Add to cart"
+      view: "View"
+      your_cart_is_empty: "Your cart is empty"
+  products_nav: "Products"
+  categories_nav: "Categories"
+  view_shop: "View shop"
+  shop_admin: "Shop admin"
+  sign_up: "Sign_up"
+  log_in: "Log_in"
+  admin:
+    categories:
+      index:
+        name: "Name"
+        action: "Action"
+        categories_t: "Categories"
+        delete: "Delete"
+        add_category: "Add category"
+    products:
+      index:
+        new_product: "New product"
+        products: "Products"
+        image: "Image"
+        title: "Title"
+        description: "Description"
+        price: "Price"
+        categories: "Categories"
+        actions: "Actions"
+        view: "View"
+        edit: "Edit"
+        delete: "Delete"
+        back_to_list: "Back to list"
+    edit_product: "Edit product"

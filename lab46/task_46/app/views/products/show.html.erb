@@ -1,0 +1,8 @@
+<h3><%= t '.title_show' %></h3>
+<h1><%= @product.send("title_" + "#{I18n.locale}") %></h1>
+
+
+<h3><%= t '.description_show' %></h3>
+
+<%= @product.send("description_" + "#{I18n.locale}") %>
+<%= @product.price_en %>

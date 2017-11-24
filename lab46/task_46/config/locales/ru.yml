@@ -1,0 +1,74 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+ru:
+  en: "Англ"
+  ru: "Русс"
+  shop: "Магазин"
+  logged_in_as: "Вы вошли как "
+  admin_panel: "Панель администратора"
+  edit_profile: "Правка профиля"
+  view_orders: "Обзор заказов"
+  sign_out: "Выход"
+  account: "Аккаунт"
+  products:
+    show:
+      title_show: "Наименоварие"
+      description_show: "Описание"
+    index:
+      category: "Категории"
+      learn_more: "Узнать больше"
+      welcome: "Добро пожаловать в магазин!"
+      here: "Тут вы сможете приобрести все виды компьютерного оборудования по самым низким ценам. Мы продаем продукцию
+      только проверенных и крупных поставщиков не обходимую для сборки компьютеров!"
+      cart: "Корзина"
+      add_to_cart: "Добавить в карзину"
+      view: "Просмотреть"
+      your_cart_is_empty: "Корзина пуста"
+  products_nav: "Товары"
+  categories_nav: "Категории"
+  view_shop: "Обзор магазина"
+  shop_admin: "Администратор магазин"
+  sign_up: "Регистрация"
+  log_in: "Войти"
+  admin:
+    categories:
+      index:
+        name: "Название"
+        action: "Действие"
+        categories_t: "Категории"
+        delete: "Удалить"
+        add_category: "Добавить категорию"
+    products:
+      index:
+        new_product: "Новый товар"
+        products: "Товары"
+        image: "Изображение"
+        title: "Наименование"
+        description: "Описание"
+        price: "Цена"
+        categories: "Категрии"
+        actions: "Действия"
+        view: "Обзор"
+        edit: "Редоктировать"
+        delete: "Удалить"
+        back_to_list: "Назад к списку"
+    edit_product: "Редактировать товар"

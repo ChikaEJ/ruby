@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1><%= @category.title %></h1>
+</p>
+
+<p>
+  <%= @category.description %>
+</p>
+<% @category.notices.each do |notice| %>
+   <br>
+  <ul class="list-group">
+    <li class="list-group-item"><%= link_to notice.title, notice_path(notice) if can? :read, notice %></li>
+  </ul>
+<% end %>
+<%= link_to 'Back', root_path, class: 'btn btn-default' %>
